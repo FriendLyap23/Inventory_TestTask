@@ -1,8 +1,11 @@
 using System;
 
-[Serializable]
-public class InventorySlotData
+namespace Assets.Inventory_TestTask
 {
-    public string ItemId;
-    public int Amount;
+    [Serializable]
+    public class InventorySlotData
+    {
+        public string ItemId;
+        public int Amount;
+    }
 }

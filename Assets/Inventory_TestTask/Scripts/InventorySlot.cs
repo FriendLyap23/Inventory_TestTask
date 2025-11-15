@@ -1,43 +1,45 @@
 using System;
-using UnityEngine;
 
-public class InventorySlot : IReadOnlyInventorySlot
+namespace Assets.Inventory_TestTask
 {
-    public event Action<string> ItemIdChanged;
-    public event Action<int> ItemAmountChanged;
-
-    public string ItemId 
+    public class InventorySlot : IReadOnlyInventorySlot
     {
-        get => _data.ItemId;
-        set 
+        public event Action<string> ItemIdChanged;
+        public event Action<int> ItemAmountChanged;
+
+        public string ItemId
         {
-            if (_data.ItemId != value)
+            get => _data.ItemId;
+            set
             {
-                _data.ItemId = value;
-                ItemIdChanged?.Invoke(value);
+                if (_data.ItemId != value)
+                {
+                    _data.ItemId = value;
+                    ItemIdChanged?.Invoke(value);
+                }
             }
         }
-    }
 
-    public int Amount
-    {
-        get => _data.Amount;
-        set
+        public int Amount
         {
-            if (_data.Amount != value)
+            get => _data.Amount;
+            set
             {
-                _data.Amount = value;
-                ItemAmountChanged?.Invoke(value);
+                if (_data.Amount != value)
+                {
+                    _data.Amount = value;
+                    ItemAmountChanged?.Invoke(value);
+                }
             }
         }
-    }
 
-    public bool IsEmpty => Amount ==0 && string.IsNullOrEmpty(ItemId);
+        public bool IsEmpty => Amount == 0 && string.IsNullOrEmpty(ItemId);
 
-    private readonly InventorySlotData _data;
+        private readonly InventorySlotData _data;
 
-    public InventorySlot(InventorySlotData data) 
-    {
-        _data = data;
+        public InventorySlot(InventorySlotData data)
+        {
+            _data = data;
+        }
     }
 }

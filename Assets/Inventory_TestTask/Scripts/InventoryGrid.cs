@@ -11,6 +11,7 @@ namespace Assets.Inventory_TestTask
         public event Action<string, int> ItemRemoved;
 
         public string OwnerId => _data.OwnerId;
+
         public Vector2Int Size
         {
             get => _data.Size;

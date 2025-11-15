@@ -1,13 +1,15 @@
 ﻿using System;
 
-public interface IReadOnlyInventory
+namespace Assets.Inventory_TestTask
 {
-    event Action<string, int> ItemAdded;
-    event Action<string, int> ItemRemoved;
+    public interface IReadOnlyInventory
+    {
+        event Action<string, int> ItemAdded;
+        event Action<string, int> ItemRemoved;
 
-    string OwnerId { get; }
+        string OwnerId { get; }
 
-    int GetAmount(string itemId);
-    bool Has(string itemId, int amount);
+        int GetAmount(string itemId);
+        bool Has(string itemId, int amount);
+    }
 }
-

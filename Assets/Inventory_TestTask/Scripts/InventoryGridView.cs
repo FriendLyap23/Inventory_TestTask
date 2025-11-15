@@ -1,33 +1,35 @@
 using UnityEngine;
 
-public class InventoryGridView : MonoBehaviour
+namespace Assets.Inventory_TestTask
 {
-    private IReadOnlyInventoryGrid _inventory;
-
-    public void Setup(IReadOnlyInventoryGrid inventory) 
+    public class InventoryGridView : MonoBehaviour
     {
-        _inventory = inventory;
-        Print();
-    }
+        private IReadOnlyInventoryGrid _inventory;
 
-
-    public void Print() 
-    {
-        var slots = _inventory.GetSlots();
-        var size = _inventory.Size;
-        var result = "";
-
-        for (var i = 0; i < size.x; i++) 
+        public void Setup(IReadOnlyInventoryGrid inventory)
         {
-            for (var j = 0; j < size.y; j++)
-            {
-                var slot = slots[i, j];
-                result += $"Slot ({i},{j}), " +
-                    $"Item: {slot.ItemId}, " +
-                    $"amount: {slot.Amount}\n";
-            }
+            _inventory = inventory;
+            Print();
         }
 
-        Debug.Log(result);
+        public void Print()
+        {
+            var slots = _inventory.GetSlots();
+            var size = _inventory.Size;
+            var result = "";
+
+            for (var i = 0; i < size.x; i++)
+            {
+                for (var j = 0; j < size.y; j++)
+                {
+                    var slot = slots[i, j];
+                    result += $"Slot ({i},{j}), " +
+                        $"Item: {slot.ItemId}, " +
+                        $"amount: {slot.Amount}\n";
+                }
+            }
+
+            Debug.Log(result);
+        }
     }
 }

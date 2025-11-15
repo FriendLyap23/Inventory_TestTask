@@ -3,6 +3,7 @@
     public  class InventorySlotController
     {
         private readonly InventorySlotView _view;
+
         public InventorySlotController(IReadOnlyInventorySlot slot, InventorySlotView view)
         {
             _view = view;

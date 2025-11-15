@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Assets.Inventory_TestTask
 {
     public class EntryPoint : MonoBehaviour

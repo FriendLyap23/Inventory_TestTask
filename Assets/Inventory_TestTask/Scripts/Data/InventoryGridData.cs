@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class InventoryGridData
+namespace Assets.Inventory_TestTask
 {
-    public string OwnerId;
-    public List<InventorySlotData> Slots;
-    public Vector2Int Size;
+    [Serializable]
+    public class InventoryGridData
+    {
+        public string OwnerId;
+        public List<InventorySlotData> Slots;
+        public Vector2Int Size;
+    }
 }

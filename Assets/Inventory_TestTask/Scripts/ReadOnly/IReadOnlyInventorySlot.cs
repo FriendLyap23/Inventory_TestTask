@@ -1,12 +1,14 @@
 using System;
-using UnityEngine;
 
-public interface IReadOnlyInventorySlot
+namespace Assets.Inventory_TestTask
 {
-    event Action<string> ItemIdChanged;
-    event Action<int> ItemAmountChanged;
+    public interface IReadOnlyInventorySlot
+    {
+        event Action<string> ItemIdChanged;
+        event Action<int> ItemAmountChanged;
 
-    string ItemId { get; }
-    int Amount { get; }
-    bool IsEmpty { get; }
+        string ItemId { get; }
+        int Amount { get; }
+        bool IsEmpty { get; }
+    }
 }
